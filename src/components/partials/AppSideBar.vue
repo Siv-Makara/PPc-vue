@@ -6,10 +6,12 @@
       <span class="brand-text font-weight-light">Rada Admin</span> <br>
       <span class="brand-text font-weight-light">Super Admin</span>
     </a>
+    <div class="sidebar mt-5">
+      
 
-    <div class="sidebar mt-3">
-      <div class="form-inline">
-        <div class="input-group" data-widget="sidebar-search">
+      <nav class="mt-5">
+        <div class="form-inline ">
+        <div class="input-group mt-3" data-widget="sidebar-search">
           <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
           <div class="input-group-append">
             <button class="btn btn-sidebar">
@@ -18,41 +20,18 @@
           </div>
         </div>
       </div>
-
-      <nav class="mt-5">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
-                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="../../index.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../../index2.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../../index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
-                </a>
-              </li>
-            </ul>
           </li>
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 User Managerment
@@ -93,7 +72,7 @@
             </ul>
           </li>
           <!-- -------cut        -->   
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
@@ -163,7 +142,8 @@
                 </a>
               </li>
             </ul>
-          </li>
+          </li> -->
+       
         </ul>
       </nav>
 
