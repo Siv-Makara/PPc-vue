@@ -3,10 +3,11 @@
 
     <a href="../../index3.html" class="brand-link elevation-4">
       <img  src="@/assets/logo.png" alt="Admin" class=" img-circle elevation-3" style=" font-size: 100px; opacity: .8">
-      <span class="brand-text font-weight-light">Rada Admin</span> <br>
-      <span class="brand-text font-weight-light">Super Admin</span>
+      <div style="float: right;  margin-top:20px; transform:translatex(-20px);">Rada Admin </div>
+      <div style="float: right; margin-top:-50jpx; transform:translatex(-60px); "><p style="font-size: 12px;">Super Admin</p></div>
+      
     </a>
-    <div class="sidebar mt-5">
+    <div class="sidebar mt-3">
       
 
       <nav class="mt-5">
