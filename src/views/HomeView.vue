@@ -8,7 +8,7 @@
       </div>
       <div style="transform: translatex(-80px)" class="col-3 float-left">Also available in : <span><a href="">SVC</a></span> <span><a href="">Excel</a></span> <span><a href="">Print</a></span></div>
     </div>
-    <div class="table-responsive  ">
+    <div class="table-responsive">
       <table class="table table-bordered table-striped table-hover text-nowrap">
         <thead>
           <tr class="text-center">
@@ -35,7 +35,7 @@
             <td>{{ item.cash }}</td>
             <td>{{ item.passvildty }}</td>
             <td>{{ item.active }}</td>
-            <td><button class="text-white btn btn-warning btn-sm" @click="editItem(item.id)">Edit</button></td>
+            <td><button class="text-white btn btn-warning btn-sm" @click="editItem(index)">Edit</button></td>
           </tr>
         </tbody>
       </table>
@@ -100,7 +100,7 @@ export default {
           active: 'yes',
         },
         {
-          id: 1,
+          id: 2,
           loginname: 'ty bora',
           displayname: 'ty bora',
           Role: 'Admin',
@@ -111,7 +111,7 @@ export default {
           active: 'No',
         },
         {
-          id: 1,
+          id: 3,
           loginname: 'Daa',
           displayname: 'daa',
           Role: 'Admin',
@@ -122,7 +122,7 @@ export default {
           active: 'No',
         },
         {
-          id: 1,
+          id: 4,
           loginname: 'Long',
           displayname: 'Long',
           Role: 'Admin',
@@ -133,7 +133,7 @@ export default {
           active: 'No',
         },
         {
-          id: 1,
+          id: 5,
           loginname: 'Veasna',
           displayname: 'Veasna',
           Role: 'Admin',
@@ -144,7 +144,7 @@ export default {
           active: 'No',
         },
         {
-          id: 1,
+          id: 6,
           loginname: 'Dav lidoch',
           displayname: 'Dav lidoch',
           Role: 'Admin',
@@ -155,7 +155,7 @@ export default {
           active: 'No',
         },
         {
-          id: 1,
+          id: 7,
           loginname: 'Sovan',
           displayname: 'Sovan',
           Role: 'Admin',
@@ -165,37 +165,24 @@ export default {
           passvildty: '01 Jan 2025',
           active: 'No',
         },
-        // Add more items as necessary
       ],
-      selectedItem: null, // To store the item being edited
+      selectedItem: null,
     };
   },
   methods: {
-    async editItem(id) {
-      try {
-        const response = await fetch(`/api/items/${id}`);
-        if (!response.ok) {
-          throw new Error('Failed to fetch item details');
-        }
-        const item = await response.json();
-        this.selectedItem = { ...item, id };
-      } catch (error) {
-        console.error(error);
-      }
+    editItem(index) {
+      this.selectedItem = { ...this.data[index], index };
     },
     saveChanges() {
       if (this.selectedItem !== null) {
-        const index = this.data.findIndex(item => item.id === this.selectedItem.id);
-        if (index !== -1) {
-          this.$set(this.data, index, { ...this.selectedItem });
-        }
+        this.$set(this.data, this.selectedItem.index, { ...this.selectedItem });
         this.selectedItem = null;
       }
     },
     cancelEdit() {
       this.selectedItem = null;
-    }
-  }
+    },
+  },
 }
 </script>
 
