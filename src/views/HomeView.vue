@@ -2,11 +2,12 @@
   <div class="home">
     <div style="background-color: aqua;" class="mb-2 col-12">
       <div class="col-3 mb-4 float-left">
-        <button class="ml-2 btn btn-info btn-sm"><i class="fas fa-arrow-left"></i> Back</button>
+        <button class="ml-2 btn btn-primary btn-sm"><i class="fas fa-arrow-left"></i> Back</button>
         <button class="ml-2 btn btn-info btn-sm"><i class="fas fa-filter"></i> Filter</button>
-        <button class="ml-2 btn btn-info btn-sm"><i class="fas fa-download"></i> Save</button>
+        <button class="ml-2 btn btn-success btn-sm"><i class="fas fa-download"></i> Save</button>
       </div>
-      <div style="transform: translatex(-80px)" class="col-3 float-left">Also available in : <span><a href="">SVC</a></span> <span><a href="">Excel</a></span> <span><a href="">Print</a></span></div>
+      <div style="transform: translatex(-80px)" class="col-3 float-left">Also available in : <span><a
+            href="">SVC</a></span> <span><a href="">Excel</a></span> <span><a href="">Print</a></span></div>
     </div>
     <div class="table-responsive">
       <table class="table table-bordered table-striped table-hover text-nowrap">
@@ -35,14 +36,26 @@
             <td>{{ item.cash }}</td>
             <td>{{ item.passvildty }}</td>
             <td>{{ item.active }}</td>
-            <td><button class="text-white btn btn-warning btn-sm" @click="editItem(index)">Edit</button></td>
+            <td><button class="text-white btn btn-warning btn-sm" @click="editItem(index)" data-toggle="modal" data-target="#exampleModalLong">Edit</button>
+                <button  class="text-white btn btn-danger btn-sm ml-2" ><i class="bi bi-trash"></i>Delete</button>
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
     <div v-if="selectedItem !== null" class="edit-form">
-      <h3>Edit Item</h3>
-      <form @submit.prevent="saveChanges">
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Edit Form</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form @submit.prevent="saveChanges">
         <div class="form-group">
           <label for="loginname">Login Name</label>
           <input type="text" v-model="selectedItem.loginname" class="form-control" id="loginname">
@@ -78,6 +91,14 @@
         <button type="submit" class="btn btn-success">Save</button>
         <button type="button" class="btn btn-secondary" @click="cancelEdit">Cancel</button>
       </form>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save</button> -->
+      </div>
+    </div>
+  </div>
+</div>
     </div>
   </div>
 </template>
@@ -173,15 +194,15 @@ export default {
     editItem(index) {
       this.selectedItem = { ...this.data[index], index };
     },
-    saveChanges() {
-      if (this.selectedItem !== null) {
-        this.$set(this.data, this.selectedItem.index, { ...this.selectedItem });
-        this.selectedItem = null;
-      }
-    },
-    cancelEdit() {
-      this.selectedItem = null;
-    },
+    // saveChanges() {
+    //   if (this.selectedItem !== null) {
+    //     this.$set(this.data, this.selectedItem.index, { ...this.selectedItem });
+    //     this.selectedItem = null;
+    //   }
+    // },
+    // cancelEdit() {
+    //   this.selectedItem = null;
+    // },
   },
 }
 </script>
@@ -190,12 +211,14 @@ export default {
 .table-responsive {
   overflow-x: auto;
 }
+
 .table {
   width: 100%;
   max-width: 100%;
   margin-bottom: 1rem;
   background-color: transparent;
 }
+
 .edit-form {
   margin-top: 20px;
 }
