@@ -26,14 +26,14 @@ const routes = [
     component: () => import('../layouts/DefaultLayout'),
     children: [
       {
-        path: '/home',
-        name: 'HomePage',
-        component: () => import('../views/HomeView')
+        path: '/role',
+        name: 'RolePage',
+        component: () => import('../views/RoleView')
       },
       {
-        path: '/about',
-        name: 'AboutPage',
-        component: () => import('../views/AboutView')
+        path: 'dashbord',
+        name: 'DashboardPage',
+        component: () => import('../views/DashboardView')
       }
     ]
   }
