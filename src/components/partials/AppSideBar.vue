@@ -2,13 +2,15 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="" class="brand-link">
-      <img src="@/assets/logo.jpg" alt="" class="brand-image img-circle elevation-3">
-      <span class="brand-text font-weight-light">Rada Admin 
-        <div style="transform:translatex(55px);">
-          <p style="font-size: 12px;">Super Admin</p>
+       <img src="@/assets/logo.jpg" alt="User Profile" style="min-height: 60px; max-height: 60px; width: 60px;" class="elevation-2 rounded-lg">
+      <span class="brand-text font-weight-light"> Oddar Meanchey <br> 
+        <div style="font-size: 12px;transform:translateX(65px);">
+          <!-- <p style="transform:translateY(-20px);">Super Admin</p> -->
         </div>
       </span>
     </a>
+  
+    <div class="sidebar mt-3"></div>
     <div class="sidebar mt-3">
       <nav class="mt-2">
         <div class="form-inline">
@@ -76,8 +78,6 @@
     </div>
   </aside>
 </template>
-
-
 <script>
   export default {
     name: 'Appsidbar',

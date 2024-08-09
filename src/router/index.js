@@ -34,6 +34,11 @@ const routes = [
         path: 'dashbord',
         name: 'DashboardPage',
         component: () => import('../views/DashboardView')
+      },
+      {
+        path: 'Create',
+        name: 'CreatePage',
+        component: () => import('../views/Create')
       }
     ]
   }

@@ -20,8 +20,8 @@
               </div>
               <div class="text-center text-lg-start mt-4 pt-2">
                 <a href="/dashbord" class="btn btn-primary btn-block">Sign In</a>
-                <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button" @click="toggleForm">Register</button>
-                <a class="text-muted" href="#!" style="font-size: 20px; font-weight: 600;">Forgot password?</a>
+                <!-- <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button" @click="toggleForm">Register</button> -->
+                <!-- <a class="text-muted" href="#!" style="font-size: 20px; font-weight: 600;">Forgot password?</a> -->
               </div>
             </form>
           </div>
